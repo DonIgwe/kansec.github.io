@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kanjarga Community Senior High School</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="sch_logo.jpg">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .logo {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .logo img {
+      height: 85px;
+      vertical-align: middle;
+    }
+
+    .title {
+      display: inline-block;
+      font-size: 45px;
+      vertical-align: middle;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f2f2f2;
+      padding: 10px;
+    }
+
+    nav a {
+      margin: 0 20px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .slideshow-container {
+      max-width: 100%;
+	  position: relative;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .mySlides {
+      display: none;
+      width: 100%;
+    }
+
+    .mySlides img {
+      width: 100%;
+      height: auto%;
+    }
+
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 1.0s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .fade {
+      animation: fade 4s ease-in-out infinite;
+    }
+
+    @keyframes fade {
+      0%,
+      100% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.3s;
+    }
+
+    .popup-content {
+      background-color: #fff;
+      padding: 20px;
+      max-width: 75%;
+      text-align: justify;
+    }
+
+    .popup.visible {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @media screen and (max-width: 600px) {
+      .logo img {
+        height: 20px;
+      }
+      .title {
+        font-size: 18px;
+      }
+      nav a {
+        margin: 0 10px;
+      }
+      .prev,
+      .next {
+        padding: 10px;
+        font-size: 14px;
+        margin-top: -16px;
+      }
+    }
+		footer {
+	  background-color: #333;
+	  color: #fff;
+	  padding: 10px;
+	  text-align: center;
+		}
+	
+	#floating-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #e74c3c;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      font-size: 16px;
+      box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+      z-index: 9999;
+      cursor: pointer;
+      animation: floating-animation 2s infinite;
+    }
+	@keyframes floating-animation {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+   .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      font-size: 20px;
+      box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+      z-index: 9999;
+      cursor: pointer;
+    }
+  </style>
+ 
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="sch_logo.jpg" alt="Logo">
+    </div>
+    <div class="title">
+      <i class="fas fa-graduation-cap"></i> Kanjarga Community Senior High School
+    </div>
+  </header>
+
+  <nav>
+    <!--<div class="logo">
+      <img src="sch_logo.jpg" alt="Logo">
+    </div>-->
+    <div>
+      <a href="#" onclick="showPopup('home-popup')">Home</a>
+      <a href="#" onclick="showPopup('about-popup')">About</a>
+      <a href="#" onclick="showPopup('contact-popup')">Contact</a>
+      <a href="#" onclick="showPopup('courses-popup')">Courses</a>
+      <a href="#" onclick="showPopup('sports-popup')">Sports</a>
+    </div>
+  </nav>
+
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="sch_block1.png" alt="Slide 1">
+    </div>
+    <div class="mySlides fade">
+      <img src="kansec2.jpeg" alt="Slide 2">
+    </div>
+    <div class="mySlides fade">
+      <img src="kansec3.jpeg" alt="Slide 3">
+    </div>
+	<div class="mySlides fade">
+      <img src="sch_block2.jpg" alt="Slide 2">
+    </div>
+    <div class="mySlides fade">
+      <img src="sch_block3.jpg" alt="Slide 3">
+    </div>
+	<div class="mySlides fade">
+      <img src="kansec1.jpeg" alt="Slide 2">
+    </div>
+    <div class="mySlides fade">
+      <img src="kansec4.jpeg" alt="Slide 3">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+  <div id="home-popup" class="popup" onclick="hidePopup('home-popup')">
+    <div class="popup-content">
+      <h2>Home</h2>
+      <p>
+		We are thrilled to share the remarkable journey of our school, Kanjarga Comminity Senior High School, as one of the distinguished Community Day Senior High Schools established in 2017. With great honor, we acknowledge the visionary efforts of the former President of Ghana, <b>His Excellency John Dramani Mahama,</b> who championed the cause of accessible secondary education for the people of Kanjarga and its surrounding areas.
+		Since its commissioning, Kanjarga Comminity Senior High School (Kansec) has been committed to fulfilling the educational aspirations of our community. We take immense pride in providing a conducive learning environment where students can thrive and acquire knowledge to shape their future.</p>
+		<p>At Kanjarga Comminity Senior High School, we recognize that education is the key to personal and societal development. With this understanding, our dedicated team of educators and staff work tirelessly to empower our students with quality education, essential skills, and moral values. We believe in nurturing well-rounded individuals who are equipped to make positive contributions to society.
+		We have witnessed countless success stories within our school community. Our students have excelled academically, participated in various co-curricular activities, and demonstrated exceptional leadership qualities. Through a diverse range of courses and extracurricular programs, we strive to foster holistic development and nurture the unique talents and passions of each student.
+		We extend our gratitude to the entire community for their unwavering support in making Kanjarga Comminity Senior High School a thriving hub of education. We also express our deepest appreciation to His Excellency John Dramani Mahama for his visionary approach in establishing community day senior high schools, which have significantly impacted the lives of countless students.</p>
+		<p>As we move forward, we remain committed to our mission of providing accessible, inclusive, and quality education to the people of Kanjarga and its environs. We continue to seek opportunities to enhance our facilities, programs, and partnerships to ensure an enriching educational experience for all our students.
+		We invite all stakeholders, parents, guardians, and students to join us on this remarkable journey of learning, growth, and excellence. Together, let us continue to build a brighter future for the students of Kanjarga and empower them to become agents of positive change.
+		Thank you for your continued support and trust in Kanjarga Comminity Senior High School.<br>
+		Warm regards,<br><br>
+		<b>Mr. Emmanuel Akalari</b><br>
+		<b>Headmaster, Kanjarga Comminity Senior High School.</b>
+		</p>
+    </div>
+  </div>
+
+  <div id="about-popup" class="popup" onclick="hidePopup('about-popup')">
+    <div class="popup-content">
+      <h2>About</h2>
+      <p>Welcome to Kanjarga Community Senior High School, a leading educational institution dedicated to providing quality education and fostering holistic development for our students. With a rich history and a commitment to excellence, we take pride in shaping the future of our students and preparing them for success in a dynamic world.
+			Established with the vision of providing accessible secondary education, KANSEC has evolved into a vibrant learning community that nurtures the intellectual, social, and emotional growth of our students. With a diverse range of programs and a dedicated team of educators, we strive to empower our students to reach their full potential.
+			</p>
+		<p><b>Our Dedicated Team:</b><br>
+			At <b>KANSEC</b>, we believe that quality education is driven by the expertise and dedication of our faculty and staff. We are proud to have a team of over 30 experienced and well-trained teachers who bring their passion for teaching and subject knowledge to the classroom. They inspire and guide our students, fostering a love for learning and helping them achieve academic excellence.<br>
+			In addition to our teaching staff, we have a total of 25 non-teaching staff members who play crucial roles in maintaining a safe and conducive learning environment. From administrative personnel to support staff, they contribute to the smooth functioning of the school and ensure a positive educational experience for our students.</p>
+		<p><b>A Vibrant Learning Community:</b><br>
+			With a current population of over 600 students, KANSEC is a vibrant and inclusive learning community. We embrace diversity and promote a culture of respect, tolerance, and collaboration. Through a range of extracurricular activities, clubs, and sports programs, we provide opportunities for our students to develop their talents, leadership skills, and teamwork abilities.</p>
+		<p><b>Looking Ahead:</b><br>
+			As we continue our journey, we are committed to the pursuit of excellence in education. We strive to introduce new programs that align with emerging fields and career opportunities, ensuring that our students are equipped with the knowledge and skills required to thrive in an ever-changing world.
+			We extend a warm invitation to parents, guardians, and prospective students to join us in our mission of providing quality education and holistic development. Together, let us shape the future and empower the next generation of leaders and innovators.
+			Thank you for your interest in KANSEC. We look forward to partnering with you in the educational journey of your child.
+			<br><br>
+			Sincerely,
+				<br><br>
+			<b>Mr. Emmanuel Akalari<br>
+			Headmaster, KANSEC</b>
+		</p>
+    </div>
+  </div>
+
+  <div id="contact-popup" class="popup" onclick="hidePopup('contact-popup')">
+    <div class="popup-content">
+      <h2>Contact</h2>
+      <p>We value your feedback, inquiries, and engagement. Our dedicated team is here to assist you with any questions or concerns you may have. Please feel free to reach out to us using the contact information provided below.</p>
+		<p><b>Contact Information:</b><br>
+			Address: [School Address]<br>
+			Phone: [School Phone Number]<br>
+			Email: [School Email Address]<br><br>
+			<b>Office Hours:</b><br>
+			Monday - Friday: 8:00 AM - 4:00 PM<br>
+			Saturday: 8:00 AM - 12:00 PM
+			</p>
+		<p>We understand the importance of effective communication and strive to respond promptly to all inquiries. Whether you are a current student, parent, prospective student, or community member, we encourage you to connect with us.<br><br>
+			For admissions-related inquiries, please contact our Admissions Office, where our staff will be delighted to guide you through the application process and provide detailed information about our programs.</p>
+		<p>If you have specific questions or concerns regarding academics, extracurricular activities, or any other school-related matters, our administrative team will be happy to assist you.<br>
+			We also welcome your suggestions, ideas, and feedback as we continuously strive to enhance our educational offerings and create an optimal learning environment.</p>
+		<p>We are committed to providing a supportive and enriching educational experience for all our stakeholders. Your input is invaluable to us as we work towards achieving excellence in education.<br>
+			Thank you for choosing KANSEC. We appreciate your interest and look forward to serving you and addressing your inquiries.
+			<br><br>
+			Sincerely,
+				<br><br>
+			<b>Mr. Emmanuel Akalari<br>
+			Headmaster, KANSEC</b>
+			</p>
+	</div>
+  </div>
+
+  <div id="courses-popup" class="popup" onclick="hidePopup('courses-popup')">
+    <div class="popup-content">
+      <h2>Courses</h2>
+      <p>
+		<b>Programs Offered:</b><br>
+		At KANSEC, we offer a comprehensive range of programs to cater to the diverse interests and career aspirations of our students. Currently, we provide the following programs:<br><br>
+		<b>General Science:</b> This program is designed for students with a keen interest in the scientific field, providing a strong foundation in subjects such as Physics, Chemistry, and Biology.<br><br>
+		<b>Business:</b> Our Business program equips students with essential knowledge and skills in areas such as Economics, Accounting, Business Management, and Entrepreneurship, preparing them for careers in the world of commerce and entrepreneurship.<br><br>
+		<b>General Arts (History):</b> This program focuses on developing critical thinking and analytical skills through the study of subjects like History, Literature, Government, and Sociology.<br><br>
+		<b>General Arts (CRS):</b> Our General Arts program with a focus on Christian Religious Studies (CRS) provides students with a deeper understanding of faith, ethics, and moral values while exploring subjects like Literature, History, and Government.<br><br>
+		<b>Home Science (Food and Nutrition):</b> This program combines practical skills in food preparation, nutrition, and health, equipping students with the knowledge to make informed decisions regarding food and nutrition.<br><br>
+		<b>Home Science (Clothing):</b> Our Home Science program with a focus on Clothing enables students to develop their creative and technical skills in fashion design, textile production, and garment construction.</p>
+    
+		<br>
+			Sincerely,
+				<br><br>
+			<b>Mr. Emmanuel Akalari<br>
+			Headmaster, KANSEC</b>
+	</div>
+  </div>
+
+  <div id="sports-popup" class="popup" onclick="hidePopup('sports-popup')">
+    <div class="popup-content">
+      <h2>Sports</h2>
+      <p>At KANSEC, we believe in the power of sports to instill discipline, teamwork, and physical fitness among our students. Our school boasts a vibrant sports program that encompasses a range of activities, with a particular focus on football, volleyball, athletics, and the cadet corps.</p>
+    <p><b><i>Football:</i></b><br>
+		Our school takes pride in its strong football teams, both for boys and girls. Our dedicated coaches and passionate players work together to achieve success on the field. Through rigorous training sessions, strategic gameplay, and participation in inter-school competitions, our football teams exhibit excellent skills, teamwork, and sportsmanship.</p>
+	<p><b><i>Volleyball:</i></b><br>
+		Volleyball is another popular sport at KANSEC. We have both boys' and girls' teams that compete at various levels. Our volleyball teams undergo intensive training, focusing on fundamental skills, tactics, and teamwork. They showcase their abilities in inter-school tournaments and championships, representing the school with pride.</p>
+	<p><b><i>Athletics:</i></b><br>
+		We have a talented pool of athletes who participate in various track and field events. From sprinting to long-distance running, high jump to long jump, and throwing events, our athletes showcase their speed, agility, and strength. They regularly participate in district and regional athletic competitions, where they display their skills and strive for excellence.</p>
+	<p><b><i>Cadet Corps:</i></b><br>
+		The cadet corps is an integral part of our school, emphasizing discipline, leadership, and character development. Our impressive cadets undergo rigorous training in military drills, physical fitness, and leadership skills. They demonstrate exemplary discipline, teamwork, and a strong sense of responsibility. The cadet corps not only prepares our students for future careers in the military but also instills values that will benefit them in all aspects of life.</p>
+	
+	<p>Join us in celebrating the achievements and talents of our sports teams and cadet corps at KANSEC. We are dedicated to nurturing well-rounded individuals who embody the values of discipline, teamwork, and excellence both on and off the field.</p>
+			Sincerely,
+				<br>
+			<b>Mr. ................</b><br>
+			<b>Sport Master, KANSEC</b>
+	</div>
+  </div>
+  
+  <script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 4000); // Change slide every 2 seconds
+    }
+
+    function plusSlides(n) {
+      showSlidesManual((slideIndex += n));
+    }
+
+    function showSlidesManual(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
+    }
+
+    function showPopup(popupId) {
+      var popup = document.getElementById(popupId);
+      popup.classList.add("visible");
+    }
+
+    function hidePopup(popupId) {
+      var popup = document.getElementById(popupId);
+      popup.classList.remove("visible");
+    }
+	
+	//call us and whatsapp
+	
+document.getElementById("floating-button").addEventListener("click", function() {
+      // Replace the phone number below with the desired phone number
+      var phoneNumber = "+9518595663";
+
+      // Create a tel link to initiate the phone call
+      var telLink = "tel:" + phoneNumber;
+
+      // Open the phone dialer with the specified phone number
+      window.location.href = telLink;
+    });
+	
+document.getElementById("whatsapp-button").addEventListener("click", function() {
+      var phoneNumber = "+233 242176501"; // Replace with your own phone number, including country code
+
+      // Replace any non-digit character from the phone number
+      phoneNumber = phoneNumber.replace(/\D/g, '');
+
+      // Create the WhatsApp link with the phone number
+      var whatsappLink = "https://api.whatsapp.com/send?phone=" + phoneNumber;
+
+      // Open the WhatsApp chat window
+      window.open(whatsappLink);
+    });
+  </script>
+  
+  <!-- footer -->
+   <footer>
+    <p>&copy; 2017 KANSEC. All rights reserved.</p>
+    <div class="social-media">
+	<a href="#" class="fa fa-twitter"></a>
+	<a href="0203072860a@gmail.com" class="fa fa-google"></a>
+	<a href="#" class="fa fa-linkedin"></a>
+	<a href="#" class="fa fa-youtube"></a>
+    </div>
+  </footer>
+  <a id="whatsapp-button" class="whatsapp-button">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+<div id="floating-button">Call Us Now</div>
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>-->
+
+  <script src="node.js"></script>
+</body>
+</html>
